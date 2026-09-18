@@ -1,7 +1,7 @@
 {
   "name": "react-example",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "electron/main.cjs",
   "type": "module",
   "scripts": {
@@ -46,6 +46,11 @@
   "build": {
     "appId": "com.galleryanto.pos",
     "productName": "Gallery ANTO",
+    "publish": {
+      "provider": "github",
+      "owner": "ibrahimezzeldin79",
+      "repo": "Gallery_Anto-"
+    },
     "directories": {
       "output": "dist-electron"
     },
