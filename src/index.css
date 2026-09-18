@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom scrollbars for WPF/C# elegant dark look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Readability and supreme contrast improvements for Arabic text and numbers on all pages */
+body {
+  font-size: 14px;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make standard grey classes darker to guarantee perfect eyesight visibility */
+.text-slate-400, .text-slate-500 {
+  color: #334155 !important; /* Slate-700 equivalent */
+}
+
+.text-slate-300 {
+  color: #475569 !important; /* Slate-600 equivalent */
+}
+
+.text-slate-450 {
+  color: #1e293b !important; /* Slate-800 equivalent */
+}
+
+.text-\[10px\] {
+  font-size: 12px !important; /* Make 10px tiny text legible at 12px */
+}
+
+.text-\[9px\] {
+  font-size: 11px !important; /* Make 9px tiny text legible at 11px */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Custom amber scrollbar for dark themes / dark cart panels to be clearly visible */
+.dark-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.45); /* Nice highly visible amber tint */
+  border-radius: 4px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.7);
+}
+
+/* Receipt Print Styling for Thermal Printers (58mm / 80mm) */
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0mm;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #receipt-print, #receipt-print * {
+    visibility: visible !important;
+  }
+
+  #receipt-print {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 3mm 4mm 25mm 4mm !important; /* 25mm bottom padding protects QR code and footer from printer cutter */
+    background: #ffffff !important;
+    color: #000000 !important;
+    direction: rtl !important;
+    box-shadow: none !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  /* Hide non-print elements in the receipt window */
+  .no-print, .no-print-backdrop {
+    display: none !important;
+  }
+}
+
+/* Highly visible blue scrollbar specifically designed for the dark sidebar */
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 8px !important;
+  display: block !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: #1e293b !important;
+  border-radius: 4px !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background: #2563eb !important; /* Bright primary blue */
+  border-radius: 4px !important;
+  border: 1px solid #1e293b !important;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6 !important; /* Brighter blue on hover */
+}
+

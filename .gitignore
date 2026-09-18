@@ -1,0 +1,43 @@
+node_modules/
+dist/
+dist-electron/
+dist-electron-final/
+build/
+coverage/
+.DS_Store
+*.log
+
+# Environment files and local secrets
+.env
+.env.*
+
+# Databases, customer data, backups, and generated data
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sqlite-wal
+*.sqlite-shm
+*.bak
+*.backup
+backups/
+data/
+
+# Generated installers and archives
+*.exe
+*.blockmap
+*.nsis.7z
+*.7z
+*.zip
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS/editor files
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
